@@ -10,3 +10,9 @@ Thumbs.db
 *.elf
 *.bin
 build/
+
+# Raw video files (keep generated GIFs)
+*.mov
+*.mp4
+*.avi
+*.mkv
