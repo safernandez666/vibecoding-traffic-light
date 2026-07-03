@@ -1,0 +1,13 @@
+{
+  "hooks": {
+    "Notification": [
+      { "hooks": [ { "type": "command", "command": "curl -s --max-time 2 -X POST http://192.168.1.10/alerta" } ] }
+    ],
+    "Stop": [
+      { "hooks": [ { "type": "command", "command": "curl -s --max-time 2 -X POST http://192.168.1.10/solo/verde" } ] }
+    ],
+    "UserPromptSubmit": [
+      { "hooks": [ { "type": "command", "command": "curl -s --max-time 2 -X POST http://192.168.1.10/solo/rojo" } ] }
+    ]
+  }
+}
