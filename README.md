@@ -4,7 +4,15 @@ Un semáforo físico conectado a Claude Code. Cuando Claude necesita llamarte, e
 
 A physical traffic light hooked up to Claude Code. When Claude needs you, the light blinks yellow and beeps; while it's thinking, it turns red; when it's done, green.
 
-[![Vibecoding Traffic Light](https://img.youtube.com/vi/8MrP0tenx98/0.jpg)](https://youtu.be/8MrP0tenx98)
+<p align="center">
+  <a href="https://youtu.be/8MrP0tenx98">
+    <img src="https://img.youtube.com/vi/8MrP0tenx98/0.jpg" alt="Vibecoding Traffic Light" width="640">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://youtu.be/8MrP0tenx98">▶ Ver en acción / Watch it in action</a>
+</p>
 
 ---
 
