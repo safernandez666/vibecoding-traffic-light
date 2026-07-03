@@ -76,7 +76,40 @@ The code uses `192.168.1.10` by default. Before using it:
 
 ## 3D Print Models
 
-Coming soon to `/models`.
+All files are in [`/models`](models/):
+
+- `caja_base.stl` — main body.
+- `caja_tapa.stl` — back cover.
+- `caja_completa.scad` — parametric source.
+
+The case has three holes for the LED module, a buzzer grille on the front, a clip to hang on the monitor bezel, an ESP32 bay with a USB-C slot at the back, and an internal cavity for soldered wires.
+
+### Renders
+
+<p align="center">
+  <img src="models/caja_v1.jpg" alt="Case render front" width="45%">
+  <img src="models/caja_v2.jpg" alt="Case render angled" width="45%">
+</p>
+
+<p align="center">
+  <img src="models/caja_cables.jpg" alt="Case internal wiring cavity" width="45%">
+  <img src="models/caja_back.jpg" alt="Case back ESP bay" width="45%">
+</p>
+
+### Things to check before printing
+
+Open `caja_completa.scad` and adjust:
+
+- `led_pitch` / `led_d` — spacing and diameter of your LED module.
+- `mon_thick` — thickness of your monitor bezel (for the clip).
+- `usb_y` / `usb_w` — position/width of the USB-C slot depending on how you mount the ESP32.
+
+Export STLs:
+
+```bash
+openscad -D 'part="base"' -o caja_base.stl caja_completa.scad
+openscad -D 'part="tapa"' -o caja_tapa.stl caja_completa.scad
+```
 
 ## License
 

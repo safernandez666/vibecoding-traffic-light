@@ -76,7 +76,40 @@ El código usa `192.168.1.10` por defecto. Antes de usarlo:
 
 ## Modelos de impresión 3D
 
-Próximamente en `/models`.
+Todos los archivos están en [`/models`](models/):
+
+- `caja_base.stl` — cuerpo principal.
+- `caja_tapa.stl` — tapa trasera.
+- `caja_completa.scad` — fuente paramétrico.
+
+La caja tiene tres agujeros para el módulo de LEDs, una rejilla para el buzzer al frente, un clip para colgar en el borde del monitor, una bahía para la ESP32 con ranura USB-C atrás y una cámara interna para los cables soldados.
+
+### Renders
+
+<p align="center">
+  <img src="models/caja_v1.jpg" alt="Render frente de la caja" width="45%">
+  <img src="models/caja_v2.jpg" alt="Render en angulo" width="45%">
+</p>
+
+<p align="center">
+  <img src="models/caja_cables.jpg" alt="Cavidad interna para cables" width="45%">
+  <img src="models/caja_back.jpg" alt="Bahia trasera para ESP32" width="45%">
+</p>
+
+### Cosas a verificar antes de imprimir
+
+Abrí `caja_completa.scad` y ajustá:
+
+- `led_pitch` / `led_d` — separación y diámetro de tu módulo de LEDs.
+- `mon_thick` — espesor del borde del monitor (para el clip).
+- `usb_y` / `usb_w` — posición/ancho de la ranura USB-C según cómo ubiques la ESP32.
+
+Exportar los STLs:
+
+```bash
+openscad -D 'part="base"' -o caja_base.stl caja_completa.scad
+openscad -D 'part="tapa"' -o caja_tapa.stl caja_completa.scad
+```
 
 ## Licencia
 
